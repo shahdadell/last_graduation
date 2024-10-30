@@ -8,6 +8,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     var mediaQuery = MediaQuery.of(context).size;
     return Stack(
       children: [
