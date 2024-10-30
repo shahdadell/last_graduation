@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:last_graduation/app_images/app_images.dart';
 import 'package:last_graduation/home_screen/homescreen.dart';
-
 import 'TextFiledLogin.dart';
 
 class Login extends StatelessWidget {
@@ -17,7 +17,7 @@ class Login extends StatelessWidget {
     return Stack(
       children: [
         Image.asset(
-          "assets/images/Rectangle.png",
+          AppImages.rectangle,
           width: mediaQuery.width,
           height: mediaQuery.height,
           fit: BoxFit.cover,
@@ -54,11 +54,11 @@ class Login extends StatelessWidget {
                       width: 80,
                       height: 80,
                       child: Image.asset(
-                        "assets/images/Group.png",
+                        AppImages.group,
                       ),
                     ),
                     Image.asset(
-                      "assets/images/text.png",
+                      AppImages.text,
                     ),
                     Center(
                       child: Container(
@@ -66,7 +66,7 @@ class Login extends StatelessWidget {
                           right: 20),
                           margin: EdgeInsets.all(15),
                           width: 330,
-                          height: 350,
+                          height: 400,
                           decoration: BoxDecoration(
                               color: Color(0x40ffffff),
                               borderRadius: BorderRadius.circular(30)),
@@ -105,8 +105,8 @@ class Login extends StatelessWidget {
                                   if (value == null || value.isEmpty) {
                                     return "Password is required";
                                   }
-                                  if (value.length < 6) {
-                                    return "Password Should Be At Least 6 Chars";
+                                  if (value != passwordController.value) {
+                                    return "Password Doesn't Match";
                                   }
                                   return null;
                                 },
