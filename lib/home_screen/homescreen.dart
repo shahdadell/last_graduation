@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:last_graduation/app_images/app_images.dart';
 import 'package:last_graduation/login_screen/login.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -13,13 +14,13 @@ class HomeScreen extends StatelessWidget {
     return Stack(
       children: [
         Image.asset(
-          "assets/images/Vector2.png",
+          AppImages.vector2,
           width: mediaQuery.width,
           height: mediaQuery.height,
           fit: BoxFit.cover,
         ),
         Image.asset(
-          "assets/images/Vector.png",
+          AppImages.vector1,
           width: mediaQuery.width,
           height: mediaQuery.height,
           fit: BoxFit.cover,

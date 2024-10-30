@@ -18,7 +18,9 @@ class TextFiledLogin extends StatelessWidget {
     required this.controller,
     required this.validator,
     this.password = false,
-  });
+  }){
+   this.icon;
+  }
 
   @override
   Widget build(BuildContext context) {
