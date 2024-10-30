@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 class CustomField extends StatelessWidget {
   TextEditingController controller;
   String hint;
-  String text ;
+  String text;
   IconData icon;
   TextInputType type;
   TextInputAction action;
   String? Function(String?)? validator;
-  bool password ;
+  bool password;
 
   CustomField({
     super.key,
@@ -25,7 +25,6 @@ class CustomField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-
       validator: validator,
       controller: controller,
       style: const TextStyle(
@@ -35,12 +34,10 @@ class CustomField extends StatelessWidget {
       keyboardType: type,
       textInputAction: action,
       decoration: InputDecoration(
-        label: Text(text,
+        label: Text(
+          text,
           style: const TextStyle(
-              color: Colors.black,
-              fontSize: 18,
-              fontWeight: FontWeight.w500
-          ),
+              color: Colors.black, fontSize: 18, fontWeight: FontWeight.w500),
         ),
         fillColor: Colors.white,
         filled: true,
@@ -66,7 +63,7 @@ class CustomField extends StatelessWidget {
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),
           borderSide: const BorderSide(
-            color: Colors.transparent,
+            color: Colors.red,
           ),
         ),
         focusedErrorBorder: OutlineInputBorder(
@@ -80,7 +77,7 @@ class CustomField extends StatelessWidget {
           color: Colors.black,
         ),
       ),
-      obscureText: password ,
+      obscureText: password,
     );
   }
 }
