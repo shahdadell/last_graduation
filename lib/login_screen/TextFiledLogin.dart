@@ -8,6 +8,7 @@ class TextFiledLogin extends StatelessWidget {
   TextEditingController controller;
   String? Function(String?)? validator;
   bool password;
+  bool obsecureText ;
 
   TextFiledLogin({
     super.key,
@@ -18,8 +19,9 @@ class TextFiledLogin extends StatelessWidget {
     required this.controller,
     required this.validator,
     this.password = false,
+    this.obsecureText = false,
+
   }){
-   this.icon;
   }
 
   @override
@@ -31,37 +33,42 @@ class TextFiledLogin extends StatelessWidget {
       keyboardType: type,
       textInputAction: action,
       decoration: InputDecoration(
-        prefixIcon: Icon(
-          icon,
-          color: Color(0xffe37222)
-        ),
+        // fillColor: Color(0xffF0F0F0FF),
+        // filled: true,
         label: Text(
           text,
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.w600
+          ),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(15),
           borderSide: const BorderSide(
-            width: 2,
+            width: 2.5,
             color: Colors.grey,
           ),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(15),
           borderSide: const BorderSide(
-            width: 2,
+            width: 1.2,
             color: Colors.orange,
           ),
         ),
         errorBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.red, width: 1.0),
-          borderRadius: BorderRadius.circular(10.0),
+          borderSide: const BorderSide(color: Colors.red, width: 1.2),
+          borderRadius: BorderRadius.circular(15),
         ),
         focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(15),
           borderSide: const BorderSide(
             color: Colors.red,
           ),
+        ),
+        suffixIcon: Icon(
+            icon,
+            color: Color(0xffF26B0A),
         ),
       ),
     );
