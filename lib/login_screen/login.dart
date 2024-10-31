@@ -42,6 +42,26 @@ class _LoginState extends State<Login> {
           fit: BoxFit.cover,
         ),
         Scaffold(
+          // appBar: AppBar(
+          //   actions: [
+          //     ElevatedButton(
+          //       onPressed: () {
+          //         Navigator.of(context)
+          //             .pushReplacementNamed(HomeScreen.routName);
+          //       },
+          //       style: ElevatedButton.styleFrom(
+          //         backgroundColor: const Color(0x90f26b0a),
+          //       ),
+          //       child: const Text(
+          //         "زيارة كضيف",
+          //         style: TextStyle(
+          //             color: Color(0xffFFFFFF),
+          //             fontSize: 18,
+          //             fontWeight: FontWeight.w600),
+          //       ),
+          //     ),
+          //   ],
+          // ),
             body: Center(
               child: Form(
                 key: formKey,
@@ -196,36 +216,6 @@ class _LoginState extends State<Login> {
                       ),
                       const SizedBox(height: 10),
                       Container(
-                        margin: EdgeInsets.only(left: 45, right: 45),
-                        width: 18,
-                        height: 30,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(13),
-                            color: Colors.white),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              width: 28,
-                              height: 28,
-                              child: Image.asset(
-                                AppImages.google,
-                              ),
-                            ),
-                            const SizedBox(width: 5),
-                            const Text(
-                              "Please sign in with your email",
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w600),
-                              textAlign: TextAlign.center,
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-                      Container(
                         margin: EdgeInsets.only(left: 25, right: 25),
                         width: 20,
                         height: 30,
@@ -254,22 +244,57 @@ class _LoginState extends State<Login> {
                           ],
                         ),
                       ),
-                      // ElevatedButton(
-                      //   onPressed: () {
-                      //     Navigator.of(context)
-                      //         .pushReplacementNamed(HomeScreen.routName);
-                      //   },
-                      //   style: ElevatedButton.styleFrom(
-                      //     backgroundColor: const Color(0x90f26b0a),
-                      //   ),
-                      //   child: const Text(
-                      //     "زيارة كضيف",
-                      //     style: TextStyle(
-                      //         color: Color(0xffFFFFFF),
-                      //         fontSize: 18,
-                      //         fontWeight: FontWeight.w600),
-                      //   ),
-                      // ),
+                      const SizedBox(height: 10),
+                      Container(
+                        margin: EdgeInsets.only(left: 45, right: 45),
+                        width: 18,
+                        height: 30,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(13),
+                            color: Colors.white),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              width: 28,
+                              height: 28,
+                              child: Image.asset(
+                                AppImages.google,
+                              ),
+                            ),
+                            const SizedBox(width: 5),
+                            const Text(
+                              "Please sign in with your email",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w600),
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 50),
+                      Column(
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context)
+                                  .pushReplacementNamed(HomeScreen.routName);
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: const Color(0x90f26b0a),
+                            ),
+                            child: const Text(
+                              "Join as a guest",
+                              style: TextStyle(
+                                  color: Color(0xffFFFFFF),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),
