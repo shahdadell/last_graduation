@@ -8,7 +8,7 @@ class TextFiledLogin extends StatelessWidget {
   TextEditingController controller;
   String? Function(String?)? validator;
   bool password;
-  bool obsecureText ;
+  bool obsecureText;
 
   TextFiledLogin({
     super.key,
@@ -20,9 +20,7 @@ class TextFiledLogin extends StatelessWidget {
     required this.validator,
     this.password = false,
     this.obsecureText = false,
-
-  }){
-  }
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -37,10 +35,8 @@ class TextFiledLogin extends StatelessWidget {
         // filled: true,
         label: Text(
           text,
-          style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w600
-          ),
+          style:
+              const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
@@ -67,8 +63,8 @@ class TextFiledLogin extends StatelessWidget {
           ),
         ),
         suffixIcon: Icon(
-            icon,
-            color: Color(0xffF26B0A),
+          icon,
+          color: const Color(0xffF26B0A),
         ),
       ),
     );

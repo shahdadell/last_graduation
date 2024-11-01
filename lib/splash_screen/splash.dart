@@ -15,7 +15,7 @@ class SplashScreen extends StatelessWidget {
             context,
             MaterialPageRoute(
               builder: (context) {
-                return Login();
+                return const Login();
               },
             ),
           );

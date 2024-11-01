@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:last_graduation/Theme/theme.dart';
+import 'package:last_graduation/signup_screen/singup_screen.dart';
 import 'package:last_graduation/splash_screen/splash.dart';
 import 'home_screen/homescreen.dart';
 import 'login_screen/login.dart';
@@ -20,8 +21,9 @@ class MyApp extends StatelessWidget {
         initialRoute: SplashScreen.routName,
         routes: {
           SplashScreen.routName: (context) => const SplashScreen(),
+          SignUpScreen.routName: (context) => SignUpScreen(),
           HomeScreen.routName: (context) => const HomeScreen(),
-          Login.routName: (context) => Login(),
+          Login.routName: (context) => const Login(),
         });
 
   }

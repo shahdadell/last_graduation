@@ -19,12 +19,6 @@ class HomeScreen extends StatelessWidget {
           height: mediaQuery.height,
           fit: BoxFit.cover,
         ),
-        Image.asset(
-          AppImages.vector1,
-          width: mediaQuery.width,
-          height: mediaQuery.height,
-          fit: BoxFit.cover,
-        ),
         Scaffold(
           appBar: AppBar(
             leading: BackButton(
