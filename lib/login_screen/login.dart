@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:last_graduation/app_images/app_images.dart';
 import 'package:last_graduation/home_screen/homescreen.dart';
-import 'TextFiledLogin.dart';
+import 'package:last_graduation/signup_screen/singup_screen.dart';
+import 'textfiled_login.dart';
 
 class Login extends StatefulWidget {
   static const String routName = "login";
+
+  const Login({super.key});
 
   @override
   State<Login> createState() => _LoginState();
@@ -31,7 +34,7 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
-    var theme = Theme.of(context);
+    //var theme = Theme.of(context);
     var mediaQuery = MediaQuery.of(context).size;
     return Stack(
       children: [
@@ -42,39 +45,43 @@ class _LoginState extends State<Login> {
           fit: BoxFit.cover,
         ),
         Scaffold(
-          // appBar: AppBar(
-          //   actions: [
-          //     ElevatedButton(
-          //       onPressed: () {
-          //         Navigator.of(context)
-          //             .pushReplacementNamed(HomeScreen.routName);
-          //       },
-          //       style: ElevatedButton.styleFrom(
-          //         backgroundColor: const Color(0x90f26b0a),
-          //       ),
-          //       child: const Text(
-          //         "زيارة كضيف",
-          //         style: TextStyle(
-          //             color: Color(0xffFFFFFF),
-          //             fontSize: 18,
-          //             fontWeight: FontWeight.w600),
-          //       ),
-          //     ),
-          //   ],
-          // ),
+          appBar: AppBar(
+            actions: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context)
+                        .pushReplacementNamed(HomeScreen.routName);
+                  },
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.all(8.0),
+                    backgroundColor: const Color(0x90f26b0a),
+                  ),
+                  child: const Text(
+                    "Join as a guest",
+                    style: TextStyle(
+                        color: Color(0xffFFFFFF),
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600),
+                  ),
+                ),
+              ),
+            ],
+          ),
             body: Center(
-              child: Form(
-                key: formKey,
-                child: SingleChildScrollView(
+              child: SingleChildScrollView(
+                child: Form(
+                  key: formKey,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    //mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       SizedBox(
                         width: 80,
                         height: 80,
                         child: Image.asset(
-                          AppImages.group,
+                          AppImages.testgroup,
                         ),
                       ),
                       Image.asset(
@@ -103,7 +110,7 @@ class _LoginState extends State<Login> {
                                       spreadRadius: 3,
                                     ), //BoxShadow
                                   ],
-                                  color: Color(0x40ffffff),
+                                  color: const Color(0x40ffffff),
                                   borderRadius: BorderRadius.circular(30)),
                               child: Column(
                                 children: [
@@ -118,7 +125,7 @@ class _LoginState extends State<Login> {
                                         return "E-mail is required";
                                       }
                                       bool emailValid = RegExp(
-                                              r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                                              r"^[a-zA-Z0-9.a-zA-Z0-9!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
                                           .hasMatch(value);
                                       if (!emailValid) {
                                         return 'PLease Enter Valid Email';
@@ -171,10 +178,10 @@ class _LoginState extends State<Login> {
                                           login();
                                         },
                                         style: ElevatedButton.styleFrom(
-                                          backgroundColor: Color(0xffF26B0A),
+                                          backgroundColor: const Color(0xffF26B0A),
                                           shape: ContinuousRectangleBorder(
                                               borderRadius:
-                                                  BorderRadius.circular(10)),
+                                                  BorderRadius.circular(30)),
                                         ),
                                         child: const Text(
                                           "Login",
@@ -199,7 +206,7 @@ class _LoginState extends State<Login> {
                                   InkWell(
                                     onTap: () {
                                       Navigator.of(context)
-                                          .pushNamed(HomeScreen.routName);
+                                          .pushNamed(SignUpScreen.routName);
                                     },
                                     child: const Text(
                                       "Create Account",
@@ -216,25 +223,26 @@ class _LoginState extends State<Login> {
                       ),
                       const SizedBox(height: 10),
                       Container(
-                        margin: EdgeInsets.only(left: 25, right: 25),
+                        margin: const EdgeInsets.only(left: 55, right: 55),
                         width: 20,
-                        height: 30,
+                        height: 40,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(13),
-                            color: Colors.white),
+                            color: Color(0xff6378ae),
+                        ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Container(
-                              width: 30,
-                              height: 30,
+                            SizedBox(
+                              width: 35,
+                              height: 35,
                               child: Image.asset(
                                 AppImages.facebook3,
                               ),
                             ),
                             const SizedBox(width: 0),
                             const Text(
-                              "Please sign in with your Facebook ",
+                              "Sign in with your facebook ",
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 20,
@@ -246,16 +254,16 @@ class _LoginState extends State<Login> {
                       ),
                       const SizedBox(height: 10),
                       Container(
-                        margin: EdgeInsets.only(left: 45, right: 45),
-                        width: 18,
-                        height: 30,
+                        margin: const EdgeInsets.only(left: 70, right: 70),
+                        width: 20,
+                        height: 40,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(13),
                             color: Colors.white),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Container(
+                            SizedBox(
                               width: 28,
                               height: 28,
                               child: Image.asset(
@@ -264,7 +272,7 @@ class _LoginState extends State<Login> {
                             ),
                             const SizedBox(width: 5),
                             const Text(
-                              "Please sign in with your email",
+                              "Sign in with your email",
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 20,
@@ -274,27 +282,7 @@ class _LoginState extends State<Login> {
                           ],
                         ),
                       ),
-                      SizedBox(height: 50),
-                      Column(
-                        children: [
-                          ElevatedButton(
-                            onPressed: () {
-                              Navigator.of(context)
-                                  .pushReplacementNamed(HomeScreen.routName);
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color(0x90f26b0a),
-                            ),
-                            child: const Text(
-                              "Join as a guest",
-                              style: TextStyle(
-                                  color: Color(0xffFFFFFF),
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600),
-                            ),
-                          ),
-                        ],
-                      ),
+                      const SizedBox(height: 50),
                     ],
                   ),
                 ),
@@ -303,7 +291,6 @@ class _LoginState extends State<Login> {
       ],
     );
   }
-
   void login() {
     if (formKey.currentState?.validate() == true) {}
   }

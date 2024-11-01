@@ -11,7 +11,7 @@ class MyTheme {
         elevation: 0,
         centerTitle: true,
       ),
-    textTheme: TextTheme(
+    textTheme: const TextTheme(
       titleLarge: TextStyle(
       fontSize: 60,
       fontWeight: FontWeight.bold,
