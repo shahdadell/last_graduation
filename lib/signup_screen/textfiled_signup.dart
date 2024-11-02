@@ -39,7 +39,7 @@ class TextFiledSingup extends StatelessWidget {
           style: const TextStyle(
               color: Colors.black, fontSize: 18, fontWeight: FontWeight.w500),
         ),
-        fillColor: Color(0xfff0f0f0),
+        fillColor: const Color(0xfff0f0f0),
         filled: true,
        hintText: hint,
         hintStyle: const TextStyle(
