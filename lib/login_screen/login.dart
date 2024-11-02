@@ -45,39 +45,41 @@ class _LoginState extends State<Login> {
           fit: BoxFit.cover,
         ),
         Scaffold(
-          appBar: AppBar(
-            leading: Padding(
-              padding: const EdgeInsets.all(10),
-              child: Container(
-                margin: EdgeInsets.all(2),
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context)
-                        .pushReplacementNamed(HomeScreen.routName);
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0x90f26b0a),
-                  ),
-                  child: const Text(
-                    "Join as a guest",
-                    style: TextStyle(
-                        color: Color(0xffFFFFFF),
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600),
+            appBar: AppBar(
+              elevation: 0,
+              leading: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Container(
+                  margin: EdgeInsets.all(2),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context)
+                          .pushReplacementNamed(HomeScreen.routName);
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0x90f26b0a),
+                    ),
+                    child: const Text(
+                      "as a guest",
+                      style: TextStyle(
+                          color: Color(0xffFFFFFF),
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600),
+                    ),
                   ),
                 ),
               ),
+              leadingWidth: 160,
             ),
-            leadingWidth: 200,
-          ),
             body: Center(
-              child: SingleChildScrollView(
-                child: Form(
-                  key: formKey,
+              child: Form(
+                key: formKey,
+                child: SingleChildScrollView(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     //mainAxisAlignment: MainAxisAlignment.end,
                     children: [
+                      // Spacer(),
                       SizedBox(
                         width: 80,
                         height: 80,
@@ -179,7 +181,8 @@ class _LoginState extends State<Login> {
                                           login();
                                         },
                                         style: ElevatedButton.styleFrom(
-                                          backgroundColor: const Color(0xffF26B0A),
+                                          backgroundColor:
+                                              const Color(0xffF26B0A),
                                           shape: ContinuousRectangleBorder(
                                               borderRadius:
                                                   BorderRadius.circular(30)),
@@ -228,8 +231,8 @@ class _LoginState extends State<Login> {
                         width: 20,
                         height: 40,
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(13),
-                            color: const Color(0xff6378ae),
+                          borderRadius: BorderRadius.circular(13),
+                          color: const Color(0xff6378ae),
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -243,7 +246,7 @@ class _LoginState extends State<Login> {
                             ),
                             const SizedBox(width: 0),
                             const Text(
-                              "Sign in with your facebook ",
+                              "Sign in ",
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 20,
@@ -273,7 +276,7 @@ class _LoginState extends State<Login> {
                             ),
                             const SizedBox(width: 5),
                             const Text(
-                              "Sign in with your email",
+                              "Sign in",
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 20,
@@ -284,6 +287,27 @@ class _LoginState extends State<Login> {
                         ),
                       ),
                       const SizedBox(height: 50),
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.center,
+                      //   children: [
+                      //     ElevatedButton(
+                      //       onPressed: () {
+                      //         Navigator.of(context)
+                      //             .pushReplacementNamed(HomeScreen.routName);
+                      //       },
+                      //       style: ElevatedButton.styleFrom(
+                      //         backgroundColor: const Color(0x90f26b0a),
+                      //       ),
+                      //       child: const Text(
+                      //         "Join as a guest",
+                      //         style: TextStyle(
+                      //             color: Color(0xffFFFFFF),
+                      //             fontSize: 18,
+                      //             fontWeight: FontWeight.w600),
+                      //       ),
+                      //     ),
+                      //   ],
+                      // ),
                     ],
                   ),
                 ),
@@ -292,6 +316,7 @@ class _LoginState extends State<Login> {
       ],
     );
   }
+
   void login() {
     if (formKey.currentState?.validate() == true) {}
   }

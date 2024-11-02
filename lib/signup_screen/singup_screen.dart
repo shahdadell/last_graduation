@@ -15,8 +15,8 @@ class SignUpScreen extends StatefulWidget {
 class _SignUpScreenState extends State<SignUpScreen> {
   late TextEditingController nameController;
   late TextEditingController emailController;
+  late TextEditingController phoneController;
   late TextEditingController passwordController;
-  late TextEditingController confirmPassController;
   var formKey = GlobalKey<FormState>();
 
   @override
@@ -24,8 +24,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
     super.dispose();
     nameController.dispose();
     emailController.dispose();
+    phoneController.dispose();
     passwordController.dispose();
-    confirmPassController.dispose();
   }
 
   @override
@@ -33,13 +33,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
     super.initState();
     nameController = TextEditingController();
     emailController = TextEditingController();
+    phoneController = TextEditingController();
     passwordController = TextEditingController();
-    confirmPassController = TextEditingController();
   }
 
   @override
   Widget build(BuildContext context) {
-    var theme = Theme.of(context);
+    //var theme = Theme.of(context);
     var mediaQuery = MediaQuery.of(context).size;
     return Stack(
       children: [
@@ -78,18 +78,18 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ),
                     const SizedBox(
-                      height: 35,
+                      height: 8,
                     ),
                     SingleChildScrollView(
                       child: Container(
                         padding: const EdgeInsets.only(
-                          top: 30,
+                          top: 20,
                           left: 20,
                           right: 20,
                         ),
                         margin: const EdgeInsets.all(15),
                         width: 400,
-                        height: 460,
+                        height: 550,
                         decoration: BoxDecoration(
                             boxShadow: const [
                               BoxShadow(
@@ -107,16 +107,32 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         child: SingleChildScrollView(
                           child: Column(
                             children: [
+                              const SizedBox(height: 10),
                               TextFiledSingup(
                                 controller: nameController,
-                                text: 'User Name',
-                                icon: Icons.person,
+                                text: 'Full Name',
+                                icon: Icons.drive_file_rename_outline_sharp,
                                 hint: 'Enter Your Name',
                                 type: TextInputType.name,
                                 action: TextInputAction.done,
                                 validator: (value) {
                                   if (value == null || value.isEmpty) {
                                     return "Name is required";
+                                  }
+                                  return null;
+                                },
+                              ),
+                              const SizedBox(height: 20),
+                              TextFiledSingup(
+                                controller: nameController,
+                                text: 'User Name',
+                                icon: Icons.person,
+                                hint: 'Enter Your User Name',
+                                type: TextInputType.name,
+                                action: TextInputAction.done,
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return "User Name is required";
                                   }
                                   return null;
                                 },
@@ -144,6 +160,24 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               ),
                               const SizedBox(height: 20),
                               TextFiledSingup(
+                                controller: phoneController,
+                                text: 'Phone Number',
+                                icon: Icons.phone,
+                                hint: 'Enter Your Phone Number',
+                                type: TextInputType.phone,
+                                action: TextInputAction.done,
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return "Phone Number is required";
+                                  }
+                                  if (value.length < 11) {
+                                    return "Phone Number Should Be At Least 11 Chars";
+                                  }
+                                  return null;
+                                },
+                              ),
+                              const SizedBox(height: 20),
+                              TextFiledSingup(
                                 controller: passwordController,
                                 text: 'Password',
                                 icon: Icons.remove_red_eye,
@@ -160,26 +194,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   return null;
                                 },
                               ),
-                              const SizedBox(height: 20),
-                              TextFiledSingup(
-                                password: true,
-                                controller: confirmPassController,
-                                text: 'Confirmation Password',
-                                icon: Icons.remove_red_eye,
-                                hint: 'Confirmation Your Password',
-                                type: TextInputType.visiblePassword,
-                                action: TextInputAction.done,
-                                validator: (value) {
-                                  if (value == null || value.isEmpty) {
-                                    return "Confirmation Password is required";
-                                  }
-                                  if (value != passwordController.value) {
-                                    return "Password Doesn't Match";
-                                  }
-                                  return null;
-                                },
-                              ),
-                              const SizedBox(height: 60),
+                              const SizedBox(height: 40),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
