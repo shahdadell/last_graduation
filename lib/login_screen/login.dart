@@ -46,16 +46,16 @@ class _LoginState extends State<Login> {
         ),
         Scaffold(
           appBar: AppBar(
-            actions: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
+            leading: Padding(
+              padding: const EdgeInsets.all(10),
+              child: Container(
+                margin: EdgeInsets.all(2),
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.of(context)
                         .pushReplacementNamed(HomeScreen.routName);
                   },
                   style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.all(8.0),
                     backgroundColor: const Color(0x90f26b0a),
                   ),
                   child: const Text(
@@ -67,7 +67,8 @@ class _LoginState extends State<Login> {
                   ),
                 ),
               ),
-            ],
+            ),
+            leadingWidth: 200,
           ),
             body: Center(
               child: SingleChildScrollView(
@@ -228,7 +229,7 @@ class _LoginState extends State<Login> {
                         height: 40,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(13),
-                            color: Color(0xff6378ae),
+                            color: const Color(0xff6378ae),
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
